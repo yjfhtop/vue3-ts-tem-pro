@@ -16,7 +16,7 @@
 
         <div class="test-item">
             <div class="test-title">
-                i18n测试
+                语言 和 主题切换
             </div>
             <div class="test-main">
                 <div>
@@ -24,6 +24,10 @@
                 </div>
                 <button @click="changeLang">
                     点我切换语言
+                </button>
+
+                <button @click="changeTheme">
+                    点我切换主题
                 </button>
             </div>
         </div>
@@ -37,14 +41,24 @@
                 <button @click="showToast"> 点击显示 toast </button>
             </div>
         </div>
+
+        <div class="test-item">
+            <div class="test-title">
+
+            </div>
+            <div class="test-main">
+
+            </div>
+        </div>
+
     </div>
 </template>
 
 <script setup lang="ts">
-    import { Toast, Button } from 'vant';
+    import { Button, Toast } from 'vant';
     import { UserModuleName, useStore } from '@/store';
     import { getThemeImg } from '@/setups/getImgPath';
-    import { Lang } from '@/store/types';
+    import { Lang, ThemeMode } from '@/store/types';
 
     const store = useStore();
 
@@ -59,6 +73,16 @@
         }
     }
 
+    function changeTheme() {
+        const nowTheme = store[UserModuleName].showThemeMode;
+        // eslint-disable-next-line no-undef
+        if (nowTheme === ThemeMode.light) {
+            store[UserModuleName].userThemeMode = ThemeMode.dark;
+        } else {
+            store[UserModuleName].userThemeMode = ThemeMode.light;
+        }
+    }
+
     function showToast() {
         Toast.loading({
             message: '加载中...',
@@ -66,6 +90,7 @@
             duration: 0,
         });
     }
+
 </script>
 
 <style scoped lang="less">
@@ -73,10 +98,22 @@
         padding-top: 1px;
     }
     .test-item {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #000;
+        padding: 5px;
+        border-radius: 3px;
         .test-title {
             padding: 3px;
             font-size: 16px;
+        }
+        button {
+            padding: 3px 4px;
+            border: 1px solid var(--border-color-base);
+            border-radius: 3px;
+            margin-left: 3px;
+            &:first-child {
+                margin-left: 0;
+            }
         }
     }
 </style>
