@@ -21,7 +21,7 @@ export default defineConfig({
     server: {
         open: true,
         host: true,
-        port: 8001,
+        port: 8022,
         proxy: {
             [config.VITE_REQ_BASE_URL]: {
                 target: config.VITE_REQ_BASE_URL_PROXY,
