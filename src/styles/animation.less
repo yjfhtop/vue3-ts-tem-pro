@@ -1,0 +1,24 @@
+// 存储动画
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+
+.bottom2top-center-enter-active,
+.bottom2top-center-leave-active {
+    transition: all 0.3s ease;
+    transform: translateY(0) translateX(-50%) !important;
+}
+
+.bottom2top-center-enter-from,
+.bottom2top-center-leave-to {
+    opacity: 0;
+    transform: translateY(100px) translateX(-50%) !important;
+}

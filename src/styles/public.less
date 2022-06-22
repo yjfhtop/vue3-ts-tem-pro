@@ -1,0 +1,57 @@
+// 存放公共样式
+.page-base {
+    padding-bottom: 20px;
+}
+
+// 这个是版心
+.page-main {
+    padding: 0 12px;
+    padding-top: 10px;
+}
+
+// 卡片的基础样式
+.card-base {
+    background-color: var(--card-bg);
+    padding: 0px 24px;
+    border-radius: 8px;
+    font-size: var(--txt-size-title3);
+    color: var(--txt-color-1);
+}
+// 卡片 阴影
+.card-shadow {
+    box-shadow: 0 3px 4px 0 rgb(0 0 0 / 3%);
+}
+
+// 卡片 间距
+.card-m-top {
+    margin-top: 8px;
+}
+
+// 滑块的文本
+.slider-txt {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--txt-color-2);
+    font-size: var(--txt-size-content4);
+}
+
+// 禁用样式
+.disable {
+    opacity: 0.4;
+}
+
+// 右上红点
+.right-top-red-dot {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: var(--state-color-red);
+    }
+}
