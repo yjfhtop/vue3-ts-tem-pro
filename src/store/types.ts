@@ -25,5 +25,7 @@ export interface DeviceStoreState {
 }
 
 export interface UserStoreState {
-    token: string
+    token: string,
+    userLang: Lang,
+    userThemeMode: ThemeMode
 }

@@ -1,6 +1,9 @@
 import { createPinia } from 'pinia';
-import { UserModuleName } from '@/store/modules/user';
+import { UserModuleName, UserStore } from '@/store/modules/user';
 import { DeviceModuleName, DeviceStore } from '@/store/modules/device';
+
+export { UserModuleName, UserStore } from '@/store/modules/user';
+export { DeviceModuleName, DeviceStore } from '@/store/modules/device';
 
 const store = createPinia();
 store.use((data) => {
@@ -14,7 +17,7 @@ store.use((data) => {
 
 export function useStore() {
     return {
-        [UserModuleName]: DeviceStore(),
+        [UserModuleName]: UserStore(),
         [DeviceModuleName]: DeviceStore(),
     };
 }

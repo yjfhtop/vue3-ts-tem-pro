@@ -3,7 +3,7 @@ import VConsole from 'vconsole';
 import App from './App.vue';
 import router from '@/router';
 import '@/styles/index.less';
-import '@/setups/getImg';
+import '@/setups/getImgPath';
 import store from '@/store';
 
 // 开发环境 并且需要 VConsole
