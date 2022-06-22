@@ -1,8 +1,14 @@
-<script lang="ts">
-    import { defineComponent } from 'vue';
+<script lang="ts" setup>
+    import { computed, watch } from 'vue';
+    import { UserModuleName, useStore } from '@/store';
+    import i18n from '@/i18n';
 
-    export default defineComponent({
+    const store = useStore();
 
+    const showLang = computed(() => store[UserModuleName].showLang);
+
+    watch(showLang, (v) => {
+        i18n.global.locale = v;
     });
 </script>
 

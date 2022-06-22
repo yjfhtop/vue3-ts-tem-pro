@@ -13,16 +13,40 @@
                 <img :src="path">
             </div>
         </div>
+
+        <div class="test-item">
+            <div class="test-title">
+                i18n测试
+            </div>
+            <div class="test-main">
+                <div>
+                    {{$t('test')}}
+                </div>
+                <button @click="changeLang">
+                    点我切换语言
+                </button>
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
-    import { useStore } from '@/store';
+    import { UserModuleName, useStore } from '@/store';
     import { getThemeImg } from '@/setups/getImgPath';
+    import { Lang } from '@/store/types';
 
     const store = useStore();
 
-    const path = getThemeImg('d1.png');
+    const path = getThemeImg('1.png');
+
+    function changeLang() {
+        const nowLang = store[UserModuleName].showLang;
+        if (nowLang === Lang.zhCN) {
+            store[UserModuleName].userLang = Lang.enUK;
+        } else {
+            store[UserModuleName].userLang = Lang.zhCN;
+        }
+    }
 </script>
 
 <style scoped lang="less">
