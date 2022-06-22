@@ -89,7 +89,7 @@ const dynamicLoadScript = (
 export default dynamicLoadScript;
 
 /**
- * 加载 VConsole
+ * 加载 VConsole, 注意,由于加载等是异步方法,会导致在加载之前的打印无法出现, 这里暂不使用
  * @param cbk
  */
 // eslint-disable-next-line no-unused-vars
