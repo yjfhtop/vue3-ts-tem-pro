@@ -6,10 +6,10 @@ import 'vant/es/dialog/style';
 import VConsole from 'vconsole';
 import App from './App.vue';
 import router from '@/router';
-import '@/styles/index.less';
 import '@/setups/getImgPath';
 import store from '@/store';
 import i18n from '@/i18n';
+import '@/styles/index.less';
 
 // 开发环境 并且需要 VConsole
 if (import.meta.env.VITE_VCONSOLE && import.meta.env.MODE !== 'production') {
