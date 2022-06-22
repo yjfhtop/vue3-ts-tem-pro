@@ -27,10 +27,21 @@
                 </button>
             </div>
         </div>
+
+        <div class="test-item">
+            <div class="test-title">
+                vant
+            </div>
+            <div class="test-main">
+                <van-button type="primary">主要按钮</van-button>
+                <button @click="showToast"> 点击显示 toast </button>
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
+    import { Toast, Button } from 'vant';
     import { UserModuleName, useStore } from '@/store';
     import { getThemeImg } from '@/setups/getImgPath';
     import { Lang } from '@/store/types';
@@ -46,6 +57,14 @@
         } else {
             store[UserModuleName].userLang = Lang.zhCN;
         }
+    }
+
+    function showToast() {
+        Toast.loading({
+            message: '加载中...',
+            forbidClick: true,
+            duration: 0,
+        });
     }
 </script>
 

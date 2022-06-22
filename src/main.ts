@@ -1,4 +1,8 @@
 import { createApp } from 'vue';
+// 函数组件不适用于自动引入s
+import 'vant/es/toast/style';
+import 'vant/es/dialog/style';
+// 函数组件不适用于自动引入e
 import VConsole from 'vconsole';
 import App from './App.vue';
 import router from '@/router';
