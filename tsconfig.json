@@ -11,7 +11,7 @@
         "esModuleInterop": true,
         "lib": [
             "esnext",
-            "dom"
+            "dom",
         ],
         "baseUrl": ".",
         "paths": {

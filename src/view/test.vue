@@ -44,6 +44,15 @@
 
         <div class="test-item">
             <div class="test-title">
+                自己的组件
+            </div>
+            <div class="test-main">
+                <button @click="showMytips"> showTips </button>
+            </div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-title">
 
             </div>
             <div class="test-main">
@@ -51,16 +60,20 @@
             </div>
         </div>
 
+        <van-slider v-model="slidreV" range :min="1" :max="8" />
     </div>
 </template>
 
 <script setup lang="ts">
-    import { Button, Toast } from 'vant';
+    import { Button, Toast, Slider } from 'vant';
+    import { ref } from 'vue';
     import { UserModuleName, useStore } from '@/store';
     import { getThemeImg } from '@/setups/getImgPath';
     import { Lang, ThemeMode } from '@/store/types';
+    import { TipsComponent } from '@/components/ExampleGlobal/TipsCom';
 
     const store = useStore();
+    const slidreV = ref([1, 8]);
 
     const path = getThemeImg('1.png');
 
@@ -89,6 +102,13 @@
             forbidClick: true,
             duration: 0,
         });
+    }
+
+    function showMytips() {
+        TipsComponent.show({ message: 'sdfdsf' });
+        setTimeout(() => {
+            TipsComponent.hide();
+        }, 1000);
     }
 
 </script>

@@ -154,7 +154,7 @@ service.interceptors.response.use(
         if (errStr) {
             // 判断是否弹出错误提示
             if (!response.config.custom?.hideErrInfo) {
-                // toast.show({
+                // toast.showTips({
                 //     txt: errStr,
                 //     iconName: '',
                 //     duration: 5 * 1000,
