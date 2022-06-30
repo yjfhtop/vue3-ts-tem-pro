@@ -1,4 +1,6 @@
-import { createRouter, RouteRecordRaw, createWebHistory } from 'vue-router';
+import {
+    createRouter, RouteRecordRaw, createWebHistory, createWebHashHistory,
+} from 'vue-router';
 
 import Layout from '@/layout/index.vue';
 import Home from '@/view/home.vue';
@@ -47,14 +49,14 @@ const routerArr: RouteRecordRaw[] = [
     },
 ];
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: routerArr,
 });
 
 // 生产环境去除测试页面
-if (import.meta.env.MODE === 'production') {
-    router.removeRoute(RouterNames.Test);
-}
+// if (import.meta.env.MODE === 'production') {
+//     router.removeRoute(RouterNames.Test);
+// }
 
 router.beforeEach((to, from, next) => {
     // if (to.name === RouterNames.Login && store.state.user.token) {

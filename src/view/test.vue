@@ -12,6 +12,9 @@
             <div class="test-main">
                 <img :src="path">
             </div>
+            <div>
+                <SvgIcon name="loading"></SvgIcon>
+            </div>
         </div>
 
         <div class="test-item">
@@ -73,7 +76,7 @@
     import { TipsComponent } from '@/components/ExampleGlobal/TipsCom';
 
     const store = useStore();
-    const slidreV = ref([1, 8]);
+    const slidreV = ref<[number, number]>([1, 8]);
 
     const path = getThemeImg('1.png');
 

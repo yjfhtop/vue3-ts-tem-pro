@@ -1,18 +1,21 @@
 <template>
     <div class="tips-c" v-show="showTips">
         <div class="mantle-c">
-
         </div>
-        <div class="tips-main">
+        <div class="tips-main" @click="updateLang">
             {{props.message}}
+            <SvgIcon name="loading"></SvgIcon>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
     // 不要使用 createApp 来得到组件的实例
-    import { ref, onUnmounted, onMounted } from 'vue';
-    import { useStore } from '@/store';
+    import { ref } from 'vue';
+    import { DeviceModuleName, useStore } from '@/store';
+    import { Lang } from '@/store/types';
+
+    const Store = useStore();
 
     interface Props {
         message: string
@@ -33,6 +36,12 @@
     function show222() {
 
     }
+
+    function updateLang() {
+        Store[DeviceModuleName].lang = Lang.enUK;
+    }
+
+    console.log(Store[DeviceModuleName].lang, '--------');
 
     defineExpose({
         hide,
@@ -60,7 +69,7 @@
             transform: translate(-50%);
             background-color: #fff;
             z-index: 1200;
-            color: #ccc;
+            color: #000;
         }
     }
 </style>
