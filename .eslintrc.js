@@ -10,19 +10,13 @@ module.exports = {
         defineExpose: 'readonly',
         withDefaults: 'readonly',
     },
-    extends: [
-        'plugin:vue/essential',
-        'airbnb-base',
-    ],
+    extends: ['plugin:vue/essential', 'airbnb-base', 'plugin:prettier/recommended'],
     parserOptions: {
         ecmaVersion: 13,
         parser: '@typescript-eslint/parser',
         sourceType: 'module',
     },
-    plugins: [
-        'vue',
-        '@typescript-eslint',
-    ],
+    plugins: ['vue', '@typescript-eslint'],
     // 覆盖 vue/script-indent 配置后，  indent导致的误差
     overrides: [
         {
@@ -35,7 +29,8 @@ module.exports = {
     rules: {
         indent: [
             2,
-            4, {
+            4,
+            {
                 SwitchCase: 1,
             },
         ],
