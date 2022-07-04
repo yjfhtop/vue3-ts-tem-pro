@@ -1,6 +1,6 @@
 // 参考 https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/Tinymce/dynamicLoadScript.js
 interface CallbacksMap {
-    [key: string]: Array<any>
+    [key: string]: Array<any>;
 }
 const callbacksMap: CallbacksMap = {};
 
@@ -17,7 +17,7 @@ const callbacksMap: CallbacksMap = {};
  */
 const dynamicLoadScript = (
     src: string,
-    isOverFun: ()=> boolean,
+    isOverFun: () => boolean,
     // eslint-disable-next-line no-unused-vars
     callback: (...items: any[]) => void,
 ) => {
@@ -95,10 +95,6 @@ export default dynamicLoadScript;
 // eslint-disable-next-line no-unused-vars
 export function loadVConsole(cbk: (...items: any[]) => void) {
     if (import.meta.env.VITE_VCONSOLE) {
-        dynamicLoadScript(
-            import.meta.env.VITE_VCONSOLE_CDN,
-            () => window.VConsole,
-            cbk,
-        );
+        dynamicLoadScript(import.meta.env.VITE_VCONSOLE_CDN, () => window.VConsole, cbk);
     }
 }

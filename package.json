@@ -7,7 +7,7 @@
         "preview": "vite preview",
         "lint": "eslint --fix --ext .js --ext .jsx --ext .ts --ext .vue src/",
         "lint:staged": "lint-staged",
-        "prettier": "prettier --write ./src/*.{js,json,wxss,wxml,wxs,ts,vue}"
+        "prettier": "prettier --write ./src/**/*.{js,json,wxss,wxml,wxs,ts,vue}"
     },
     "lint-staged": {
         "src/**/*.{ts,tsx,js,vue}": [

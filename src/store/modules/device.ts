@@ -5,7 +5,7 @@ export const DeviceModuleName = 'DeviceModuleName';
 
 export const DeviceStore = defineStore({
     id: DeviceModuleName,
-    state: ():DeviceStoreState => ({
+    state: (): DeviceStoreState => ({
         lang: Lang.zhCN,
         themeMode: ThemeMode.light,
     }),

@@ -9,7 +9,7 @@ const pathS = '../assets/img';
 const ThemeDarkDirName = 'dart';
 const ThemeLightDirName = 'light';
 
-function getImgPaths(imgName: string, theme: ThemeMode, lang: Lang) : string[] {
+function getImgPaths(imgName: string, theme: ThemeMode, lang: Lang): string[] {
     const deep3 = [pathS, ThemeDarkDirName, ThemeLightDirName, imgName].join('/');
     const deep2 = [pathS, ThemeDarkDirName, imgName].join('/');
     const deep1 = [pathS, imgName].join('/');

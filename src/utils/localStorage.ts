@@ -10,7 +10,7 @@ export { localStorageKeyMap } from './publicKey';
  * @param tryPares  获取后是否尝试将获取的数据通过  JSON.parse() 处理
  * @returns {any}
  */
-export function localGetItem<T = any>(key: LocalStorageKey, tryPares = true) : T {
+export function localGetItem<T = any>(key: LocalStorageKey, tryPares = true): T {
     if (key) {
         const str = localStorage.getItem(key);
         if (str === null) return null as any;

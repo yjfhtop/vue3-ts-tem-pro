@@ -1,15 +1,13 @@
-import {
-    createRouter, RouteRecordRaw, createWebHistory, createWebHashHistory,
-} from 'vue-router';
+import { createRouter, RouteRecordRaw, createWebHistory, createWebHashHistory } from 'vue-router';
 
 import Layout from '@/layout/index.vue';
 import Home from '@/view/home.vue';
 
 export enum RouterNames {
-    Home= 'Home',
+    Home = 'Home',
     Login = 'Login',
     Test = 'Test',
-    NotFound = 'NotFound'
+    NotFound = 'NotFound',
 }
 
 const routerArr: RouteRecordRaw[] = [

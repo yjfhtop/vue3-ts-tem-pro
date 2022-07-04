@@ -11,14 +11,14 @@ export type DataType =
     | 'Symbol'
     | 'File'
     | 'Date'
-    | 'RegExp'
+    | 'RegExp';
 
 /**
  * 获取数据类型
  * @param data
  * @returns {string}  Object  Array Function Null ....
  */
-export function getDataType(data: any):DataType {
+export function getDataType(data: any): DataType {
     const typeStr = Object.prototype.toString.call(data);
     let useTypeStr = typeStr.slice(8);
     useTypeStr = useTypeStr.slice(0, useTypeStr.length - 1);
@@ -30,11 +30,11 @@ export function getDataType(data: any):DataType {
  * @param data
  * @returns {*|{}}
  */
-export function deepCopy<T>(data: T) : T {
+export function deepCopy<T>(data: T): T {
     // 存储引用数据, 用于判断是否有循环引用
     const reMap = new Map();
 
-    function copy(orgData: any) : T {
+    function copy(orgData: any): T {
         const typeStr = getDataType(orgData);
 
         const useData = orgData;
@@ -86,7 +86,7 @@ export function deepCopy<T>(data: T) : T {
  * @param newData
  * @param copy 是否copy数据， 脱离引用
  */
-export function mergeData<T>(oldData: T, newData: T, copy = true) : T {
+export function mergeData<T>(oldData: T, newData: T, copy = true): T {
     if (copy) {
         oldData = deepCopy(oldData);
         newData = deepCopy(newData);
@@ -116,7 +116,7 @@ export function mergeData<T>(oldData: T, newData: T, copy = true) : T {
  * @param data
  * @returns {*}
  */
-export function tryStrParse<T = string>(data: string) : T {
+export function tryStrParse<T = string>(data: string): T {
     let target = data;
     try {
         target = JSON.parse(data);
@@ -133,7 +133,7 @@ export function tryStrParse<T = string>(data: string) : T {
  * @param data2
  * @returns {boolean}
  */
-export function isEq(data1: any, data2: any) : boolean {
+export function isEq(data1: any, data2: any): boolean {
     const data1Type = getDataType(data1);
     const data2Type = getDataType(data2);
     if (data1Type !== data2Type) return false;
@@ -177,10 +177,10 @@ export function isEq(data1: any, data2: any) : boolean {
         // file 一般不可比较， 这里做一些简单的比较
         case 'File':
             return (
-                data1.lastModified === data2.lastModified
-                && data1.name === data2.name
-                && data1.size === data2.size
-                && data1.type === data2.type
+                data1.lastModified === data2.lastModified &&
+                data1.name === data2.name &&
+                data1.size === data2.size &&
+                data1.type === data2.type
             );
         case 'Date':
             return data1.getTime() === data2.getTime();

@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 
 import { Toast } from 'vant';
 
-export type Custom = AxiosRequestConfig['custom']
+export type Custom = AxiosRequestConfig['custom'];
 
 // const store = useStore();
 
@@ -39,9 +39,9 @@ const defCustom: Custom = {
 const RepeatMap: Record<string, boolean> = {};
 
 // 重复 请求的 错误
-export type RepeatErr = Error & { isRepeatErr?: boolean, conf?: AxiosRequestConfig }
+export type RepeatErr = Error & { isRepeatErr?: boolean; conf?: AxiosRequestConfig };
 
-function generateRepeatErr(conf: AxiosRequestConfig) : RepeatErr {
+function generateRepeatErr(conf: AxiosRequestConfig): RepeatErr {
     const err: RepeatErr = new Error('您的手速太快了');
     err.isRepeatErr = true;
     err.conf = conf;
@@ -49,8 +49,12 @@ function generateRepeatErr(conf: AxiosRequestConfig) : RepeatErr {
 }
 
 function getKey(conf: AxiosRequestConfig) {
-    const key = (conf.baseURL || '') + conf.url + conf.method + JSON.stringify(conf.params)
-        + JSON.stringify(conf.custom?.originalData || conf.data);
+    const key =
+        (conf.baseURL || '') +
+        conf.url +
+        conf.method +
+        JSON.stringify(conf.params) +
+        JSON.stringify(conf.custom?.originalData || conf.data);
     return key;
 }
 
@@ -99,10 +103,9 @@ service.interceptors.request.use(
             config.headers['Content-Type'] = 'multipart/form-data';
             const formData = new FormData();
             const data = config.data || {};
-            Object.keys(data)
-                .forEach((key) => {
-                    formData.append(key, data[key]);
-                });
+            Object.keys(data).forEach((key) => {
+                formData.append(key, data[key]);
+            });
             config.data = formData;
         }
 

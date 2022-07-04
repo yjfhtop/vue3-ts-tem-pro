@@ -4,4 +4,4 @@ const zhCh = {
 
 export default zhCh;
 
-export type LangType = typeof zhCh
+export type LangType = typeof zhCh;

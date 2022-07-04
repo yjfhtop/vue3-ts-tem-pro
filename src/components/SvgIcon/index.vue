@@ -28,10 +28,10 @@
 </script>
 
 <style lang="less">
-.svg-icon {
-    width: 1em;
-    height: 1em;
-    fill: currentColor;
-    vertical-align: middle;
-}
+    .svg-icon {
+        width: 1em;
+        height: 1em;
+        fill: currentColor;
+        vertical-align: middle;
+    }
 </style>

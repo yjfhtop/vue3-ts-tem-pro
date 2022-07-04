@@ -6,11 +6,9 @@
         </div>
 
         <div class="test-item">
-            <div class="test-title">
-                图片测试
-            </div>
+            <div class="test-title">图片测试</div>
             <div class="test-main">
-                <img :src="path">
+                <img :src="path" />
             </div>
             <div>
                 <SvgIcon name="loading"></SvgIcon>
@@ -18,49 +16,35 @@
         </div>
 
         <div class="test-item">
-            <div class="test-title">
-                语言 和 主题切换
-            </div>
+            <div class="test-title">语言 和 主题切换</div>
             <div class="test-main">
                 <div>
-                    {{$t('test')}}
+                    {{ $t('test') }}
                 </div>
-                <button @click="changeLang">
-                    点我切换语言
-                </button>
+                <button @click="changeLang">点我切换语言</button>
 
-                <button @click="changeTheme">
-                    点我切换主题
-                </button>
+                <button @click="changeTheme">点我切换主题</button>
             </div>
         </div>
 
         <div class="test-item">
-            <div class="test-title">
-                vant
-            </div>
+            <div class="test-title">vant</div>
             <div class="test-main">
                 <van-button type="primary">主要按钮</van-button>
-                <button @click="showToast"> 点击显示 toast </button>
+                <button @click="showToast">点击显示 toast</button>
             </div>
         </div>
 
         <div class="test-item">
-            <div class="test-title">
-                自己的组件
-            </div>
+            <div class="test-title">自己的组件</div>
             <div class="test-main">
-                <button @click="showMytips"> showTips </button>
+                <button @click="showMytips">showTips</button>
             </div>
         </div>
 
         <div class="test-item">
-            <div class="test-title">
-
-            </div>
-            <div class="test-main">
-
-            </div>
+            <div class="test-title"></div>
+            <div class="test-main"></div>
         </div>
 
         <van-slider v-model="slidreV" range :min="1" :max="8" />
@@ -113,7 +97,6 @@
             TipsComponent.hide();
         }, 1000);
     }
-
 </script>
 
 <style scoped lang="less">

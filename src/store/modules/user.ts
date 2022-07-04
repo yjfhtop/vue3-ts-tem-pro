@@ -6,7 +6,7 @@ export const UserModuleName = 'UserModuleName';
 
 export const UserStore = defineStore({
     id: UserModuleName,
-    state: ():UserStoreState => ({
+    state: (): UserStoreState => ({
         token: '',
         userLang: Lang.system,
         userThemeMode: ThemeMode.system,

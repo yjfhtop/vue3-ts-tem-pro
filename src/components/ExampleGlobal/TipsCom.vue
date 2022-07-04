@@ -1,9 +1,8 @@
 <template>
     <div class="tips-c" v-show="showTips">
-        <div class="mantle-c">
-        </div>
+        <div class="mantle-c"></div>
         <div class="tips-main" @click="updateLang">
-            {{props.message}}
+            {{ props.message }}
             <SvgIcon name="loading"></SvgIcon>
         </div>
     </div>
@@ -18,7 +17,7 @@
     const Store = useStore();
 
     interface Props {
-        message: string
+        message: string;
     }
     const props = withDefaults(defineProps<Props>(), {
         message: '信息!!!',
@@ -33,9 +32,7 @@
         showTips.value = true;
     }
 
-    function show222() {
-
-    }
+    function show222() {}
 
     function updateLang() {
         Store[DeviceModuleName].lang = Lang.enUK;
@@ -52,7 +49,7 @@
 <style scoped lang="less">
     .tips-c {
         .mantle-c {
-            background-color: rgba(0,0,0 0.3);
+            background-color: rgba(0, 0, 0 0.3);
             position: fixed;
             top: 0;
             left: 0;
