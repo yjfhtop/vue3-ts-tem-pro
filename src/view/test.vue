@@ -39,6 +39,10 @@
             <div class="test-title">自己的组件</div>
             <div class="test-main">
                 <button @click="showMytips">showTips</button>
+                <Tips
+                    style="margin-left: 300px"
+                    message="While part of the CSS Logical Properties specification, it does not define logical offsets. It defines physical offsets, regardless of the element's writing mode, directionality, and text orientation."
+                ></Tips>
             </div>
         </div>
 
@@ -47,7 +51,11 @@
             <div class="test-main"></div>
         </div>
 
-        <van-slider v-model="slidreV" range :min="1" :max="8" />
+        <div style="width: 90vw">
+            <van-slider v-model="slidreV" range :min="1" :max="8" />
+        </div>
+
+        <div class="" style="height: 1000px"></div>
     </div>
 </template>
 
@@ -58,6 +66,7 @@
     import { getThemeImg } from '@/setups/getImgPath';
     import { Lang, ThemeMode } from '@/store/types';
     import { TipsComponent } from '@/components/ExampleGlobal/TipsCom';
+    import Tips from '@/components/Tips/Tips.vue';
 
     const store = useStore();
     const slidreV = ref<[number, number]>([1, 8]);
