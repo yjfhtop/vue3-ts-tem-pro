@@ -32,8 +32,6 @@
         showTips.value = true;
     }
 
-    function show222() {}
-
     function updateLang() {
         Store[DeviceModuleName].lang = Lang.enUK;
     }

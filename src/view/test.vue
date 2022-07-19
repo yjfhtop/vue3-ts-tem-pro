@@ -60,12 +60,12 @@
 </template>
 
 <script setup lang="ts">
-    import { Button, Toast, Slider } from 'vant';
+    import { Button, Slider } from 'vant';
     import { ref } from 'vue';
     import { UserModuleName, useStore } from '@/store';
     import { getThemeImg } from '@/setups/getImgPath';
     import { Lang, ThemeMode } from '@/store/types';
-    import { TipsComponent } from '@/components/ExampleGlobal/TipsCom';
+    import { Toast } from '@/components/ExampleGlobal/Toast';
     import Tips from '@/components/Tips/Tips.vue';
 
     const store = useStore();
@@ -93,17 +93,19 @@
     }
 
     function showToast() {
-        Toast.loading({
-            message: '加载中...',
-            forbidClick: true,
-            duration: 0,
-        });
+        // Toast.loading({
+        //     message: '加载中...',
+        //     forbidClick: true,
+        //     duration: 0,
+        // });
     }
 
+    let showTxt = '1';
     function showMytips() {
-        TipsComponent.show({ message: 'sdfdsf' });
+        Toast.show({ message: showTxt });
+        showTxt += '1';
         setTimeout(() => {
-            TipsComponent.hide();
+            Toast.hide();
         }, 1000);
     }
 </script>
