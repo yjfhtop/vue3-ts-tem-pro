@@ -3,13 +3,12 @@
 > 
 >2.如果 移动端 需要版心， 那么修改 postcss.config.js 中 '如果需要版心 这里可以取消注释'的注释， 同时引用 rem.ts
 
-vue3 + ts + vux + vue-router + axios
+vue3 + ts + pinia + vue-router + axios
 
 
 # svg 处理
 
 > 采用 [vite-plugin-svg-icons](https://github.com/anncwb/vite-plugin-svg-icons)
-> 注意点：按照文档使用会导致svg 大小固定，也不会接收跟随字体颜色。  修改了 SvgIcon 部分代码， 使其 变为了svg大小和颜色 跟随 字体变化
 
 
 
