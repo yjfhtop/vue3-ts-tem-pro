@@ -56,6 +56,8 @@
         </div>
 
         <div class="" style="height: 1000px"></div>
+
+        <Guide v-model="nowStep" :steps="steps"></Guide>
     </div>
 </template>
 
@@ -67,9 +69,18 @@
     import { Lang, ThemeMode } from '@/store/types';
     import { Toast } from '@/components/ExampleGlobal/Toast';
     import Tips from '@/components/Tips/Tips.vue';
+    import Guide from '@/components/Guide/Guide.vue';
 
     const store = useStore();
     const slidreV = ref<[number, number]>([1, 8]);
+    const nowStep = ref(1);
+    const steps = ref([
+        {
+            shape: 'circular',
+            r: 20,
+            c: { x: 50, y: 50 },
+        },
+    ]);
 
     const path = getThemeImg('1.png');
 
